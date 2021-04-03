@@ -1,4 +1,4 @@
-import objetos_numericos
+import numerico.objetos_numericos
 from copy import copy
 
 '''
@@ -203,6 +203,7 @@ def al_m_al (n1, n2):
 
     return mul(lr)
 
+#heap    arbol binario de busqueda
 
 def pl_m_pl (n1, n2):
     l = []; lr = []

@@ -1,34 +1,11 @@
 
-#solo se puede ingresar numeros enteros directamente en la pila
-class num:
-    #numero entero
-    tp = "ni";
-    v = 0;
-    lt = "";
-    def __init__(self, v_):
-        self.v = v_;
-
-        self.lt = str(self.v);
-
-class var:
-    #variable en string
-    tp = "vi";
-    v = 'x';
-    lt = "";
-
-    def __init__(self, v_):
-        self.v = v_;
-
-        self.lt = v_;
-    #potencialmente mas cosas, pila de variables, punteros a expresiones, etc;
-
 class op:
     #punteros a operados
     ins = [];
     #tipo de expresion que forma
     tp = "";
     #variables de las que depende en orden
-    dp = set();
+    dp = [];
     #latex
     lt = "";
 
@@ -72,7 +49,7 @@ class pow(op):
     def __init__(self, b, e):
         self.ins.extend([b, e]);
 
-       self.lt = b.lt + '^{' + e.lt + '}'
+        self.lt = b.lt + '^{' + e.lt + '}'
 
 #funcion de optimizacion, para generar mas facilmente latex de raiz
 #y por ser muy utilizada en la geometria
